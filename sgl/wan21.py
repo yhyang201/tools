@@ -3,7 +3,7 @@ import time
 import os
 import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-from utils import wait_for_port
+from utils import wait_for_port, kill_process_tree
 from openai import OpenAI
 
 cmd = "sglang serve --model-path Wan-AI/Wan2.1-T2V-1.3B-Diffusers --port 30010"
@@ -55,3 +55,4 @@ for i in range(5):
 
 avg_time = sum(times) / len(times)
 print(f"Average time: {avg_time:.4f} seconds")
+kill_process_tree(process.pid)

@@ -6,7 +6,7 @@ import base64
 import os
 import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-from utils import wait_for_port
+from utils import wait_for_port, kill_process_tree
 from openai import OpenAI
 
 # Start the SGLang server
@@ -62,7 +62,6 @@ if response.data:
     output_filename = "output_image_edit_sgl.png"
     with open(output_filename, "wb") as f:
         f.write(image_bytes)
-    print(f"Image saved to {os.path.abspath(output_filename)}")
+    # print(f"Image saved to {os.path.abspath(output_filename)}")
 
-# Cleanup
-process.terminate()
+kill_process_tree(process.pid)

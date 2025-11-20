@@ -5,35 +5,13 @@ import time
 import glob
 import shutil
 
-def kill_process_by_port(port):
-    """Kills any process listening on the specified port."""
-    # Try fuser first
-    if shutil.which("fuser"):
-        subprocess.run(f"fuser -k {port}/tcp", shell=True, stderr=subprocess.DEVNULL, stdout=subprocess.DEVNULL)
-    
-    # Also try lsof just in case
-    if shutil.which("lsof"):
-        try:
-            # Get PID
-            cmd = f"lsof -t -i:{port}"
-            pid = subprocess.check_output(cmd, shell=True, stderr=subprocess.DEVNULL).decode().strip()
-            if pid:
-                subprocess.run(f"kill -9 {pid}", shell=True, stderr=subprocess.DEVNULL, stdout=subprocess.DEVNULL)
-        except subprocess.CalledProcessError:
-            pass
-
-    # Hard cleanup for sglang serve
-    subprocess.run("pkill -f 'sglang serve'", shell=True, stderr=subprocess.DEVNULL, stdout=subprocess.DEVNULL)
-    
-    # Wait a bit for resources to be released
-    time.sleep(2)
-
 def run_script(script_path):
     print(f"Running {script_path}...")
     
     # Pre-cleanup if it's an SGL script
     if "sgl/" in script_path:
-        kill_process_by_port(30010)
+        # cleanup handled by script itself or manually if needed
+        pass
 
     try:
         # Run the script
@@ -69,7 +47,8 @@ def run_script(script_path):
     finally:
         # Post-cleanup
         if "sgl/" in script_path:
-            kill_process_by_port(30010)
+            # cleanup handled by script itself or manually if needed
+            pass
 
 def main():
     # Identify all benchmarks by looking at the sgl/ folder

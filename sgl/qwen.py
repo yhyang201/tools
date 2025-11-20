@@ -3,7 +3,7 @@ import time
 import os
 import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-from utils import wait_for_port
+from utils import wait_for_port, kill_process_tree
 from openai import OpenAI
 
 cmd = "sglang serve --model-path Qwen/Qwen-Image --port 30010"
@@ -22,7 +22,8 @@ for i in range(5):
     content = client.images.generate(
         prompt="A curious raccoon",
         n=1,
-        size="720x720"
+        size="720x720",
+        response_format="b64_json"
     )
     end_time = time.time()
     elapsed = end_time - start_time
@@ -31,3 +32,5 @@ for i in range(5):
 
 avg_time = sum(times) / len(times)
 print(f"Average time: {avg_time:.4f} seconds")
+
+kill_process_tree(process.pid)
