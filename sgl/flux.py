@@ -1,6 +1,6 @@
 import subprocess
 import time
-from utils import wait_for_port
+from ..utils import wait_for_port
 from openai import OpenAI
 
 cmd = "sglang serve --model-path black-forest-labs/FLUX.1-dev --port 30010"

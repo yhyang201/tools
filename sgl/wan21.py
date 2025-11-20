@@ -1,6 +1,6 @@
 import subprocess
 import time
-from utils import wait_for_port
+from ..utils import wait_for_port
 from openai import OpenAI
 
 cmd = "sglang serve --model-path Wan-AI/Wan2.1-T2V-1.3B-Diffusers --port 30010"

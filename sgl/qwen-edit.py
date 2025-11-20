@@ -4,7 +4,7 @@ import requests
 from io import BytesIO
 import base64
 import os
-from utils import wait_for_port
+from ..utils import wait_for_port
 from openai import OpenAI
 
 # Start the SGLang server
