@@ -25,6 +25,7 @@ for i in range(5):
     times.append(elapsed)
     print(f"Run {i+1}: {elapsed:.4f} seconds")
 
+times = times[1:]
 avg_time = sum(times) / len(times)
 print(f"Average time: {avg_time:.4f} seconds")
 image.save("flux-dev.png")

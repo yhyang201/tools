@@ -41,6 +41,7 @@ with torch.inference_mode():
         elapsed = end_time - start_time
         times.append(elapsed)
         print(f"Run {i+1}: {elapsed:.4f} seconds")
+    times = times[1:]
     avg_time = sum(times) / len(times)
     print(f"Average time: {avg_time:.4f} seconds")
     output_image = output.images[0]
