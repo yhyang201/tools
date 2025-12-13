@@ -20,8 +20,8 @@ for i in range(5):
     output = pipe(
         prompt=prompt,
         negative_prompt=negative_prompt,
-        height=480,
-        width=832,
+        height=1920,
+        width=1088,
         num_frames=81,
         guidance_scale=5.0
     ).frames[0]

@@ -29,8 +29,8 @@ for i in range(5):
     image = pipe(
         prompt=prompt,
         negative_prompt=negative_prompt,
-        width=1024,
-        height=1536,
+        width=1080,
+        height=1920,
         num_inference_steps=50,
         true_cfg_scale=4.0,
         generator=torch.Generator(device=device).manual_seed(42)

@@ -54,6 +54,7 @@ def main():
     # Identify all benchmarks by looking at the sgl/ folder
     sgl_scripts = glob.glob("sgl/*.py")
     benchmarks = [os.path.basename(s).replace(".py", "") for s in sgl_scripts]
+    benchmarks = ["wan21"]
     benchmarks.sort()
 
     results = []

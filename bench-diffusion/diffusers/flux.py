@@ -13,8 +13,8 @@ for i in range(5):
     start_time = time.time()
     image = pipe(
         prompt,
-        height=1024,
-        width=1536,
+        height=1920,
+        width=1080,
         guidance_scale=3.5,
         num_inference_steps=50,
         max_sequence_length=512,

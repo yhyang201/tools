@@ -22,7 +22,7 @@ for i in range(5):
     content = client.images.generate(
         prompt="A curious raccoon",
         n=1,
-        size="720x720",
+        size="1920x1080",
         response_format="b64_json",
     )
     end_time = time.time()

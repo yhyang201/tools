@@ -43,7 +43,7 @@ for i in range(5):
         image=image_file,
         prompt=prompt,
         n=1,
-        size="1024x1536",
+        size="1080x1920",
         response_format="b64_json",
     )
     end_time = time.time()

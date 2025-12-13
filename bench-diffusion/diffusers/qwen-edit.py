@@ -27,6 +27,8 @@ inputs = {
     "true_cfg_scale": 4.0,
     "negative_prompt": " ",
     "num_inference_steps": 50,
+    "height": 1920,
+    "width": 1080,
 }
 
 with torch.inference_mode():

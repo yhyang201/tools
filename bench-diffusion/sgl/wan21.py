@@ -46,7 +46,7 @@ times = []
 for i in range(5):
     start_time = time.time()
     content = _create_wait_and_download(
-        client, "A cat walks on the grass, realistic", "832x480"
+        client, "A cat walks on the grass, realistic", "1920x1088"
     )
     end_time = time.time()
     elapsed = end_time - start_time
