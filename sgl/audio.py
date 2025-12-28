@@ -6,7 +6,7 @@ from openai import AsyncOpenAI
 
 API_KEY = "sk-123456"
 BASE_URL = "http://localhost:30000/v1"
-AUDIO_FILE_PATH = "/sgl-workspace/20180803.mp3"
+AUDIO_FILE_PATH = "https://raw.githubusercontent.com/yhyang201/tools/main/test_files/audio_file.mp3"
 CONCURRENT_REQUESTS = 128  
 HISTOGRAM_BINS = 10
 
